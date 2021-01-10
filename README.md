@@ -2,11 +2,13 @@
 A Xamarin Forms Mobile Solution Template based on the principles of Clean Architecture. Feel free to grab it and use on your next Xamarin Forms Project.
 
 **Disclaimer**
-* This project was created with the intention of helping me to scaffold Xamarin Forms Boilerplate code quicker with principles of Clean Architecture intact. The template also aims to helpd future-proof code for easier transition to .NET MAUI.
+* This project was created with the intention of helping peope scaffold Xamarin Forms boilerplate code quicker with the principles of Clean Architecture intact. 
+* This template aims to reflects the princples of clean architecture, however, some principles will be implemented or improved over time.
 
 ### Intented Use Cases: 
-* Resuable Mobile App Template Template
-* Large Enterprise-Grade Mobile Applications Applications
+* Use this template as the foundation for creating Large/Enterprise-Grade Mobile Applications using Xamarin.
+* Use this Mobile App Template for reducing the need to write boilerplate code
+* Use this template in scenarios where a development team seek to future-proof their Xamarin Forms codebase for easier transition to .NET MAUI.
 
 ### Clean Architecture Layers:
 * Presentation:
