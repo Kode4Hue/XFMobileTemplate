@@ -9,9 +9,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>XfMobileTemplate.iOS</RootNamespace>
+    <RootNamespace>XfMobileTemplate.Ui.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>XfMobileTemplate.iOS</AssemblyName>
+    <AssemblyName>XfMobileTemplate.Ui.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
@@ -128,9 +128,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\XfMobileTemplate\XfMobileTemplate.csproj">
-      <Project>{DD2EB86F-4183-4148-AB86-1A8D5FB7F333}</Project>
-      <Name>XfMobileTemplate</Name>
+    <ProjectReference Include="..\XfMobileTemplate.Ui\XfMobileTemplate.Ui.csproj">
+      <Project>{B83DA140-04FF-4AEE-B933-3B247CD433B5}</Project>
+      <Name>XfMobileTemplate.Ui</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
