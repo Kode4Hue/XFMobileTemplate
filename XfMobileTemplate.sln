@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XfMobileTemplate.Ui.Android", "XfMobileTemplate\XfMobileTemplate.Ui.Android\XfMobileTemplate.Ui.Android.csproj", "{08C6B087-387E-4967-8A48-76CBD9666EE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XfMobileTemplate.Presn.Android", "XfMobileTemplate\XfMobileTemplate.Presn.Android\XfMobileTemplate.Presn.Android.csproj", "{08C6B087-387E-4967-8A48-76CBD9666EE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XfMobileTemplate.Ui.iOS", "XfMobileTemplate\XfMobileTemplate.Ui.iOS\XfMobileTemplate.Ui.iOS.csproj", "{57728A5C-DEE3-470E-9331-FD0D1165C432}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XfMobileTemplate.Presn.iOS", "XfMobileTemplate\XfMobileTemplate.Presn.iOS\XfMobileTemplate.Presn.iOS.csproj", "{57728A5C-DEE3-470E-9331-FD0D1165C432}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XfMobileTemplate.Ui", "XfMobileTemplate\XfMobileTemplate.Ui\XfMobileTemplate.Ui.csproj", "{B83DA140-04FF-4AEE-B933-3B247CD433B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XfMobileTemplate.Presn", "XfMobileTemplate\XfMobileTemplate.Presn\XfMobileTemplate.Presn.csproj", "{B83DA140-04FF-4AEE-B933-3B247CD433B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XfMobileTemplate.Ca.Domain", "XfMobileTemplate.Ca.Domain\XfMobileTemplate.Ca.Domain.csproj", "{294E6CBF-485E-4C24-99C1-E62B80BDB8BA}"
 EndProject

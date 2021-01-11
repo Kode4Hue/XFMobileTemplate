@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace XfMobileTemplate.Ui.iOS
+namespace XfMobileTemplate.Presn.iOS
 {
     public class Application
     {
