@@ -2,7 +2,7 @@
 
 namespace XfMobileTemplate.Ca.Infrastructure
 {
-    public class Class1
+    public class DependencyInjection
     {
     }
 }
