@@ -24,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
+    <EmbeddedResource Update="Features\Petrol\PetrolPriceSearch\PetrolPriceSearchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

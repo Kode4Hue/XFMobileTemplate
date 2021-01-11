@@ -4,9 +4,9 @@ using XfMobileTemplate.Presn.Features.Common.ViewModels;
 
 namespace XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch
 {
-    public class PetrolPriceSearchVM: MediatRViewModelBase
+    public class PetrolPriceSearchPageVM: MediatRViewModelBase
     {
-        public PetrolPriceSearchVM(INavigationService navigationService, IMediator mediator)
+        public PetrolPriceSearchPageVM(INavigationService navigationService, IMediator mediator)
             :base(navigationService, mediator)
         {
         }
