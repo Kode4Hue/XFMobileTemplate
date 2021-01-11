@@ -24,6 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\XfMobileTemplate.Ca.Application\XfMobileTemplate.Ca.Application.csproj" />
+    <ProjectReference Include="..\..\XfMobileTemplate.Ca.Infrastructure\XfMobileTemplate.Ca.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Features\Petrol\PetrolPriceSearch\PetrolPriceSearchPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

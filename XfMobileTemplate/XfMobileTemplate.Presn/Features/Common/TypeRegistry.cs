@@ -3,6 +3,7 @@ using MediatR;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Xamarin.Forms;
+using XfMobileTemplate.Ca.Application;
 using XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch;
 
 namespace XfMobileTemplate.Presn.Features.Common
@@ -12,6 +13,7 @@ namespace XfMobileTemplate.Presn.Features.Common
 
         public static void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.AddApplication();
             RegisterForNavigation(containerRegistry);
             RegisterMediator(containerRegistry);
         }
