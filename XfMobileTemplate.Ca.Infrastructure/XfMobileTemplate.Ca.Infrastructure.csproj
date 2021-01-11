@@ -17,4 +17,8 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\XfMobileTemplate.Ca.Application\XfMobileTemplate.Ca.Application.csproj" />
+  </ItemGroup>
+
 </Project>
