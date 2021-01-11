@@ -12,6 +12,5 @@ namespace XfMobileTemplate.Presn.Features.Common.ViewModels
         {
             EventAggregator = eventAggregator;
         }
-
     }
 }
