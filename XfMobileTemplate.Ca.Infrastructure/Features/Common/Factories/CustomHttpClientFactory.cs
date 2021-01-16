@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
 using System.Net;
+using XfMobileTemplate.Ca.Infrastructure.Features.Common.Constants;
 
 namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
 {
@@ -19,22 +20,24 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
             ConfigureSerializationSettings(httpClient);
 
             return httpClient;
-
-
         }
 
         private void ConfigureHttpClientProxy(IRestClient httpClient)
         {
-            if (httpClient != null)
+            if (httpClient is not null)
             {
-                var webProxy = new WebProxy("192.168.0.7", 5555);
-                httpClient.Proxy = webProxy;
+                if(AppSettings.EnableHttpProxy &&
+                    AppSettings.CurrentEnvironment.Equals(AppEnvironment.Development))
+                {
+                    var webProxy = new WebProxy(AppSettings.HttpProxyAddress, AppSettings.HttpProxyPort);
+                    httpClient.Proxy = webProxy;
+                }
             }
         }
 
         private void ConfigureSerializationSettings(IRestClient httpClient)
         {
-            if (httpClient != null)
+            if (httpClient is not null)
             {
                 httpClient.UseNewtonsoftJson(GenerateJsonSerializerConfigurations());
             }
