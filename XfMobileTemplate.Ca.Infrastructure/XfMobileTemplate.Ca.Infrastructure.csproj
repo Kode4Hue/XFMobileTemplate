@@ -9,7 +9,9 @@
    </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Fluent-Json.NET" Version="0.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Moises.Toolkit.Newtonsoft.FluentAPI" Version="2.0.2" />
     <PackageReference Include="Prism.Forms" Version="8.0.0.1909" />
     <PackageReference Include="RestSharp" Version="106.11.7" />
     <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="106.11.7" />
