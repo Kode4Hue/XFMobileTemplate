@@ -1,5 +1,4 @@
-﻿using RestSharp;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using XfMobileTemplate.Ca.Domain.Features.Common;
 using XfMobileTemplate.Ca.Domain.Features.Petrol;
 

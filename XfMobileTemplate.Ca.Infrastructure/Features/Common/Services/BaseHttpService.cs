@@ -1,10 +1,9 @@
 ﻿using RestSharp;
 using XfMobileTemplate.Ca.Application.Features.Common.Factories;
-using XfMobileTemplate.Ca.Application.Features.Common.Services;
 
 namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Services
 {
-    public class BaseHttpService: IBaseHttpService
+    public class BaseHttpService
     {
         protected IRestClient HttpClient;
         public BaseHttpService(ICustomHttpClientFactory httpClientFactory)
