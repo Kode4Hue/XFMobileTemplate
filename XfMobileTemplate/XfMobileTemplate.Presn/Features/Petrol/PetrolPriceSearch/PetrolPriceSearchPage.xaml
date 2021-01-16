@@ -6,7 +6,7 @@
              x:Class="XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch.PetrolPriceSearchPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Petrol Price Search Page!"
+            <Label Text="Petrol Price Search Page!" TextColor="Black"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
