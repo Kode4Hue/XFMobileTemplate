@@ -3,11 +3,12 @@ using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
 using System.Net;
+using XfMobileTemplate.Ca.Application.Features.Common.Factories;
 using XfMobileTemplate.Ca.Infrastructure.Features.Common.Constants;
 
 namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
 {
-    public class CustomHttpClientFactory
+    public class CustomHttpClientFactory: ICustomHttpClientFactory
     {
         public IRestClient GetInstance()
         {
