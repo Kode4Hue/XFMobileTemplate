@@ -3,6 +3,6 @@
     public static class NavigationPageConstants
     {
         public const string NavigationPage = "NavigationPage";
-        public const string PetrolPriceSearchPage = "NavigationPage";
+        public const string PetrolPriceSearchPage = "PetrolPriceSearchPage";
     }
 }
