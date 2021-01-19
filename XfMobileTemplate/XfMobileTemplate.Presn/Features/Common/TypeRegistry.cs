@@ -4,6 +4,7 @@ using Prism.DryIoc;
 using Prism.Ioc;
 using Xamarin.Forms;
 using XfMobileTemplate.Ca.Application;
+using XfMobileTemplate.Ca.Application.Features.Petrol.Queries.GetPetrolPricesQuery;
 using XfMobileTemplate.Ca.Infrastructure;
 using XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch;
 
@@ -30,8 +31,9 @@ namespace XfMobileTemplate.Presn.Features.Common
         {
             var container = containerRegistry.GetContainer();
             container.RegisterDelegate<ServiceFactory>(r => r.Resolve);
-            container.RegisterMany(new[] { typeof(IMediator).GetAssembly() },
-                //typeof(GetProductCategoriesQuery).GetAssembly(),
+            container.RegisterMany(new[] { typeof(IMediator).GetAssembly(),
+                typeof(GetPetrolPricesQuery).GetAssembly()},
+               // typeof(GetPetrolPricesQuery).GetAssembly(),
                 //typeof(GetProductSearchResultQuery).GetAssembly(),
                 //typeof(GetCartQuery).GetAssembly()},
                 Registrator.Interfaces);

@@ -4,6 +4,7 @@
              xmlns:prism="http://prismlibrary.com"
              x:Class="XfMobileTemplate.App">
     <Application.Resources>
-
+        <!-- Strings -->
+        <x:String x:Key="FalAngleRight">&#xf105;</x:String>
     </Application.Resources>
 </prism:PrismApplication>

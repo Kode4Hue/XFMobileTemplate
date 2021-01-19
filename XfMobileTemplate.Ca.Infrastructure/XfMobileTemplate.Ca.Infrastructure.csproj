@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,7 +9,11 @@
    </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fluent-Json.NET" Version="0.2.0" />
+    <Compile Remove="Features\Common\Constants\AppSettings.Example.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fluent-Json.NET.Lib_v10" Version="0.2.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Moises.Toolkit.Newtonsoft.FluentAPI" Version="2.0.2" />
     <PackageReference Include="Prism.Forms" Version="8.0.0.1909" />
@@ -21,6 +25,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\XfMobileTemplate.Ca.Application\XfMobileTemplate.Ca.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Common\Mappings\" />
   </ItemGroup>
 
 </Project>

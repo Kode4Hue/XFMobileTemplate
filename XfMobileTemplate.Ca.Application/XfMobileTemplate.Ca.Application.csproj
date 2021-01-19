@@ -22,4 +22,9 @@
     <ProjectReference Include="..\XfMobileTemplate.Ca.Domain\XfMobileTemplate.Ca.Domain.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Features\Petrol\Commands\" />
+  </ItemGroup>
+
 </Project>

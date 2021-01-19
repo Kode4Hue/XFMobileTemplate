@@ -13,7 +13,8 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Services
 
         protected IRestRequest BuildRequest(string resource, Method method)
         {
-            throw new System.NotImplementedException();
+            return new RestRequest(resource, method)
+                .AddHeader("Content-Type", "application/json");
         }
     }
 }

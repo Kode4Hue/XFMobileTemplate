@@ -2,9 +2,8 @@
 using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
-using System.Net;
 using XfMobileTemplate.Ca.Application.Features.Common.Factories;
-using XfMobileTemplate.Ca.Infrastructure.Features.Common.Constants;
+using XfMobileTemplate.Ca.Infrastructure.Features.Petrol;
 
 namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
 {
@@ -27,12 +26,12 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
         {
             if (httpClient is not null)
             {
-                if(AppSettings.EnableHttpProxy &&
-                    AppSettings.CurrentEnvironment.Equals(AppEnvironment.Development))
-                {
-                    var webProxy = new WebProxy(AppSettings.HttpProxyAddress, AppSettings.HttpProxyPort);
-                    httpClient.Proxy = webProxy;
-                }
+                //if (AppSettings.EnableHttpProxy &&
+                //    AppSettings.CurrentEnvironment.Equals(AppEnvironment.Development))
+                //{
+                //    var webProxy = new WebProxy(AppSettings.HttpProxyAddress, AppSettings.HttpProxyPort);
+                //    httpClient.Proxy = webProxy;
+                //}
             }
         }
 
@@ -56,7 +55,9 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
         private FluentContractResolver BuildObjectsAndJsonContractMappings()
         {
             var jsonContractResolver = new FluentContractResolver();
-            //jsonContractResolver.AddConfiguration(new UserSignupMap());
+            jsonContractResolver
+                .AddConfiguration(new PetrolPriceDTOMap());
+            jsonContractResolver.AddConfiguration(new PetrolResponseContentDTOMap());
             return jsonContractResolver;
         }
 

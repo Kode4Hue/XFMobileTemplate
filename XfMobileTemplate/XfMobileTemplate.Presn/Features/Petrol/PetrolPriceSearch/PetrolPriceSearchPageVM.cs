@@ -34,10 +34,20 @@ namespace XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch
 
         private async Task GetPetrolPrices()
         {
-            var query = new GetPetrolPricesQuery{ Limit = _limit};
-            ResultDTO<PetrolPriceDTO> petrolPricesResult = await Mediator.Send(query);
-            PetrolPrices = new ObservableCollection<PetrolPriceDTO>(petrolPricesResult.Records);
-            // _totalRecords = petrolPricesResult.Total;
+
+            try
+            {
+                var query = new GetPetrolPricesQuery { Limit = _limit };
+                ResultDTO<PetrolPriceDTO> petrolPricesResult = await Mediator.Send(query);
+                PetrolPrices = new ObservableCollection<PetrolPriceDTO>(petrolPricesResult.Records);
+                // _totalRecords = petrolPricesResult.Total;
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
     }
 }

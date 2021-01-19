@@ -5,10 +5,64 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch.PetrolPriceSearchPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Petrol Price Search Page!" TextColor="Black"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <!--<StackLayout>
+            <Label Text="showing" TextColor="Black" />
+        </StackLayout>-->
+        <CollectionView ItemsSource="{Binding PetrolPrices}" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="4*,1*" RowDefinitions="1*,2*,1*">
+                        <Label Grid.Row="0" Grid.Column="0"
+                                Text="{Binding Name}" />
+                        <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="$ " />
+                                    <Span Text="{Binding Price}" />
+                                    <Span Text="FalAngleRight" FontFamily="fa-light" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="1" Grid.Column="0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Outlet: " />
+                                    <Span Text="{Binding OutletName}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                            <Label >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="FalAngleRight" FontFamily="fa-light" />
+                                        <Span Text="{Binding SurveyDate}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="FalAngleRight" FontFamily="fa-light" />
+                                        <Span Text="{Binding Parish}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="FalAngleRight" FontFamily="fa-light" />
+                                        <Span Text="{Binding Town}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>
