@@ -9,7 +9,7 @@
         <!--<StackLayout>
             <Label Text="showing" TextColor="Black" />
         </StackLayout>-->
-        <CollectionView ItemsSource="{Binding PetrolPrices}" >
+        <CollectionView ItemsSource="{Binding PetrolPrices}" BackgroundColor="Blue" >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid ColumnDefinitions="4*,1*" RowDefinitions="1*,2*,1*">

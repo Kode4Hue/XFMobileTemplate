@@ -47,7 +47,7 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
         {
             return new JsonSerializerSettings
             {
-                ContractResolver = BuildObjectsAndJsonContractMappings(),
+              //  ContractResolver = BuildObjectsAndJsonContractMappings(),
                 NullValueHandling = NullValueHandling.Ignore
             };
         }
