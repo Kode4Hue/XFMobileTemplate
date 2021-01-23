@@ -1,65 +1,64 @@
-﻿using Newtonsoft.FluentAPI.Resolvers;
-using Newtonsoft.Json;
-using RestSharp;
-using RestSharp.Serializers.NewtonsoftJson;
+﻿using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using XfMobileTemplate.Ca.Application.Features.Common.Factories;
-using XfMobileTemplate.Ca.Infrastructure.Features.Petrol;
+using XfMobileTemplate.Ca.Infrastructure.Features.Common.Constants;
 
 namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
 {
-    public class CustomHttpClientFactory: ICustomHttpClientFactory
+    public class CustomHttpClientFactory : ICustomHttpClientFactory
     {
-        public IRestClient GetInstance()
+        private HttpClient _httpClient;
+
+        public HttpClient GetInstance()
         {
-            var httpClient = new RestClient()
+            if (_httpClient is null)
             {
-                ThrowOnAnyError = true
+                _httpClient = GenerateHttpClient();
+            }
+
+            return _httpClient;
+        }
+
+        private WebProxy GenerateWebProxy()
+        {
+            return new WebProxy(AppSettings.HttpProxyAddress, AppSettings.HttpProxyPort);
+        }
+
+        private HttpClient GenerateHttpClient()
+        {
+            HttpClient client = null;
+
+            if (AppSettings.CurrentEnvironment.Equals(AppEnvironment.Development) && AppSettings.EnableHttpProxy)
+            {
+                client = GenerateWebProxyClient();
+            }
+            else
+            {
+                client = new HttpClient();
+            }
+
+            ConfigureHttpClient(client);
+
+            return client;
+        }
+
+        private void ConfigureHttpClient(HttpClient client)
+        {
+            client.DefaultRequestHeaders.Accept
+                .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+        private HttpClient GenerateWebProxyClient()
+        {
+            var webProxy = GenerateWebProxy();
+            var httpClientHandler = new HttpClientHandler()
+            {
+                Proxy = webProxy,
+                UseProxy = true
             };
 
-            ConfigureHttpClientProxy(httpClient);
-            ConfigureSerializationSettings(httpClient);
-
-            return httpClient;
+            return new HttpClient(httpClientHandler);
         }
-
-        private void ConfigureHttpClientProxy(IRestClient httpClient)
-        {
-            if (httpClient is not null)
-            {
-                //if (AppSettings.EnableHttpProxy &&
-                //    AppSettings.CurrentEnvironment.Equals(AppEnvironment.Development))
-                //{
-                //    var webProxy = new WebProxy(AppSettings.HttpProxyAddress, AppSettings.HttpProxyPort);
-                //    httpClient.Proxy = webProxy;
-                //}
-            }
-        }
-
-        private void ConfigureSerializationSettings(IRestClient httpClient)
-        {
-            if (httpClient is not null)
-            {
-                httpClient.UseNewtonsoftJson(GenerateJsonSerializerConfigurations());
-            }
-        }
-
-        public JsonSerializerSettings GenerateJsonSerializerConfigurations()
-        {
-            return new JsonSerializerSettings
-            {
-              //  ContractResolver = BuildObjectsAndJsonContractMappings(),
-                NullValueHandling = NullValueHandling.Ignore
-            };
-        }
-
-        private FluentContractResolver BuildObjectsAndJsonContractMappings()
-        {
-            var jsonContractResolver = new FluentContractResolver();
-            jsonContractResolver
-                .AddConfiguration(new PetrolPriceDTOMap());
-            jsonContractResolver.AddConfiguration(new PetrolResponseContentDTOMap());
-            return jsonContractResolver;
-        }
-
     }
 }

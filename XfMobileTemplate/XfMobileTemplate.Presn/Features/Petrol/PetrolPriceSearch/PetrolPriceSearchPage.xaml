@@ -28,7 +28,7 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="Outlet: " />
-                                    <Span Text="{Binding OutletName}" />
+                                    <!--<Span Text="{Binding OutletName}" />-->
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
