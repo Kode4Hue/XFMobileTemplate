@@ -5,66 +5,114 @@
              prism:ViewModelLocator.AutowireViewModel="True" NavigationPage.HasNavigationBar="True"
              x:Class="XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch.PetrolPriceSearchPage" >
 
+
+    <ContentPage.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="LightSkyBlue" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
     <NavigationPage.TitleView>
         <StackLayout>
             <Label Text="Petrol Prices" FontSize="Title" />
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-
-        <StackLayout  Padding="20">
-            <CollectionView ItemsSource="{Binding PetrolPrices}">
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding PetrolPrices}" ItemSizingStrategy="MeasureFirstItem" 
+                            BackgroundColor="White" SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid ColumnDefinitions="4*,1*" RowDefinitions="1*,2*,1*">
-                            <Label Grid.Row="0" Grid.Column="0"
+                        <StackLayout Padding="0" >
+                            <Grid  RowDefinitions="16,1*,1*" Padding="20,10"  RowSpacing="6" 
+                               BackgroundColor="Transparent">
+                                <Label VerticalOptions="Start" VerticalTextAlignment="Start" LineHeight="16"
+                                Grid.Row="0" TextColor="DodgerBlue"
                                 Text="{Binding Name}" />
-                            <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" >
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="$ " />
-                                        <Span Text="{Binding Price}" />
-                                        <Span Text="FalAngleRight" FontFamily="fa-light" />
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label Grid.Row="1" Grid.Column="0">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Outlet: " />
-                                        <Span Text="{Binding OutletName}" />
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
-                                <Label >
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="FalAngleRight" FontFamily="fa-light" />
-                                            <Span Text="{Binding SurveyDate}" />
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
 
-                                <Label >
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="FalAngleRight" FontFamily="fa-light" />
-                                            <Span Text="{Binding Parish}" />
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
+                                <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="2">
+                                    <Label HorizontalTextAlignment="Start" HorizontalOptions="Start"
+                                       TextColor="#85bb65" FontAttributes="Bold">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="$" />
+                                                <Span Text="{Binding Price}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label VerticalOptions="End" VerticalTextAlignment="End"
+                                       HorizontalOptions="Start" HorizontalTextAlignment="Start" 
+                                       TextColor="SlateGray" FontSize="Micro">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="at " />
+                                                <Span Text="{Binding OutletName}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
 
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="FalAngleRight" FontFamily="fa-light" />
-                                            <Span Text="{Binding Town}" />
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            </StackLayout>
-                        </Grid>
+                                <StackLayout Grid.Row="2" VerticalOptions="End" Padding="0"
+                                         Orientation="Horizontal" Spacing="0" >
+
+                                    <Label VerticalTextAlignment="End" VerticalOptions="End" >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{StaticResource FalMapPin}" FontFamily="fa-light" />
+                                                <Span Text=" " />
+                                                <Span Text="{Binding Parish}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <BoxView HorizontalOptions="Center"
+                                         Margin="6,0" VerticalOptions="End" HeightRequest="16"
+                                         WidthRequest="1" BackgroundColor="Black" />
+
+                                    <Label VerticalTextAlignment="End" VerticalOptions="End">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{StaticResource FalCity}" FontFamily="fa-light" />
+                                                <Span Text=" " />
+                                                <Span Text="{Binding Town}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <BoxView HorizontalOptions="Center" 
+                                         Margin="6,0" VerticalOptions="End" HeightRequest="16"
+                                         WidthRequest="1" BackgroundColor="Black" />
+
+                                    <Label  VerticalTextAlignment="End" VerticalOptions="End">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{StaticResource FalCalendarDay}" FontFamily="fa-light" />
+                                                <Span Text=" " />
+                                                <Span Text="{Binding SurveyDate}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                </StackLayout>
+                            </Grid>
+
+                            <!-- Separator -->
+                            <BoxView Grid.Row="3"  HeightRequest="1" Margin="0"
+                               VerticalOptions="End" BackgroundColor="Black" />
+                        </StackLayout>
+                        
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
