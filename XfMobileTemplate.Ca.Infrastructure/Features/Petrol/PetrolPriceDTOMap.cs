@@ -8,20 +8,14 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Petrol
     {
         public void Configure(JsonTypeBuilder<PetrolPriceDTO> jsonTypeBuilder)
         {
-            jsonTypeBuilder.Property(x => x.Item)
+            jsonTypeBuilder.Property(x => x.Name)
                .HasFieldName("Item");
-            jsonTypeBuilder.Property(x => x.ItemId)
+            jsonTypeBuilder.Property(x => x.Id)
               .HasFieldName("ItemID");
             jsonTypeBuilder.Property(x => x.OutletId)
                 .HasFieldName("OutletID");
             jsonTypeBuilder.Property(x => x.OutletName)
                 .HasFieldName("Outlet_Name");
-
-            jsonTypeBuilder.Property(x => x.Id)
-                .IsIgnored(true);
-
-            jsonTypeBuilder.Property(x => x.Name)
-                .IsIgnored(true);
         }
     }
 }

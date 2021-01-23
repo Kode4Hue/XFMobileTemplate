@@ -25,19 +25,17 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Services
 
         protected async Task<HttpResponseMessage> MakeRequest(HttpRequestMessage request)
         {
-
-            HttpResponseMessage responseMessage = null;
-
+            HttpResponseMessage responseMessage;
             try
             {
                 responseMessage = await HttpClient.SendAsync(request);
-                responseMessage.EnsureSuccessStatusCode();
-            }
-            catch (HttpRequestException ex)
-            {
-                var statusCode = (int) responseMessage.StatusCode;
-                throw new ApiException($"API Error occured with status code: {statusCode}", 
-                    ex, statusCode, responseMessage.Content);
+
+                if (!responseMessage.IsSuccessStatusCode)
+                {
+                    var statusCode = (int)responseMessage.StatusCode;
+                    throw new ApiException($"API Error occured with status code: {statusCode}",
+                        statusCode, responseMessage.Content);
+                }
             }
             catch(Exception ex)
             {

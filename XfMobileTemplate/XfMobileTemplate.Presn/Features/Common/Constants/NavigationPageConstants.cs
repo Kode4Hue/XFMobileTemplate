@@ -4,5 +4,6 @@
     {
         public const string NavigationPage = "NavigationPage";
         public const string PetrolPriceSearchPage = "PetrolPriceSearchPage";
+        public const string MainPage = "MainPage";
     }
 }

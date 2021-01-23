@@ -22,12 +22,15 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
 
         private WebProxy GenerateWebProxy()
         {
-            return new WebProxy(AppSettings.HttpProxyAddress, AppSettings.HttpProxyPort);
+            return new WebProxy(AppSettings.HttpProxyAddress, AppSettings.HttpProxyPort)
+            {
+                BypassProxyOnLocal = true
+            };
         }
 
         private HttpClient GenerateHttpClient()
         {
-            HttpClient client = null;
+            HttpClient client;
 
             if (AppSettings.CurrentEnvironment.Equals(AppEnvironment.Development) && AppSettings.EnableHttpProxy)
             {
@@ -45,8 +48,9 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
 
         private void ConfigureHttpClient(HttpClient client)
         {
+            string contentType = MimeTypes.Application.Json;
             client.DefaultRequestHeaders.Accept
-                .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                .Add(new MediaTypeWithQualityHeaderValue(contentType));
         }
 
         private HttpClient GenerateWebProxyClient()

@@ -17,13 +17,14 @@ namespace XfMobileTemplate.Presn.Features.Common
         {
             containerRegistry.AddApplication();
             containerRegistry.AddInfrastructure();
-            RegisterForNavigation(containerRegistry);
             RegisterMediator(containerRegistry);
+            RegisterForNavigation(containerRegistry);
         }
 
         private static void RegisterForNavigation(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<PetrolPriceSearchPage, PetrolPriceSearchPageVM>();
         }
 

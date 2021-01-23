@@ -24,12 +24,12 @@ namespace XfMobileTemplate
 
             try
             {
-                //var result = await NavigationService
-                //    .NavigateAsync($"{NavigationPageConstants.NavigationPage}" +
-                //    $"/{NavigationPageConstants.PetrolPriceSearchPage}");
-
                 var result = await NavigationService
-                   .NavigateAsync($"/{NavigationPageConstants.PetrolPriceSearchPage}");
+                    .NavigateAsync($"/{NavigationPageConstants.NavigationPage}" +
+                    $"/{NavigationPageConstants.PetrolPriceSearchPage}");
+
+                //var result = await NavigationService
+                //   .NavigateAsync($"{NavigationPageConstants.NavigationPage}/{NavigationPageConstants.PetrolPriceSearchPage}");
             }
             catch (Exception ex)
             { 
