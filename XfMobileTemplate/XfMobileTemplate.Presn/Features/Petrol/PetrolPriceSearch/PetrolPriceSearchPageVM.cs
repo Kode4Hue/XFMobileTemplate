@@ -9,7 +9,7 @@ using XfMobileTemplate.Presn.Features.Common.ViewModels;
 
 namespace XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch
 {
-    public class PetrolPriceSearchPageVM: MediatRViewModelBase, IInitializeAsync
+    public class PetrolPriceSearchPageVM: MediatRViewModelBase, INavigationAware
     {
         private ObservableCollection<PetrolPriceDTO> _petrolPrices;
         public ObservableCollection<PetrolPriceDTO> PetrolPrices
@@ -25,11 +25,6 @@ namespace XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch
             :base(navigationService, mediator)
         {
             _limit = 10; //TODO: pull limit from app setting
-        }
-
-        public async Task InitializeAsync(INavigationParameters parameters)
-        {
-            await GetPetrolPrices();
         }
 
         private async Task GetPetrolPrices()
@@ -48,6 +43,16 @@ namespace XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch
                 throw ex;
             }
 
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+
+        }
+
+        public async void OnNavigatedTo(INavigationParameters parameters)
+        {
+            await GetPetrolPrices();
         }
     }
 }
