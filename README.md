@@ -27,7 +27,6 @@ A Xamarin Forms Mobile Solution Template based on the principles of Clean Archit
 * [Prism Library - MVVM, Events, NavigationService, etc](https://prismlibrary.com/)
 * [Mediatr](https://github.com/jbogard/MediatR)
 * [FluentValidation](https://fluentvalidation.net/)
-* [RestSharp](https://restsharp.dev/)
 * [JSON.NET](https://www.newtonsoft.com/json)
 
 ### Roadmap:
