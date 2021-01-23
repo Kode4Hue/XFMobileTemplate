@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\Common\Constants\AppSettings.Example.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fluent-Json.NET.Lib_v10" Version="0.2.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Moises.Toolkit.Newtonsoft.FluentAPI" Version="2.0.2" />
+    <PackageReference Include="Prism.Forms" Version="8.0.0.1909" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1905" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XfMobileTemplate.Ca.Application\XfMobileTemplate.Ca.Application.csproj" />
+  </ItemGroup>
+
+</Project>
