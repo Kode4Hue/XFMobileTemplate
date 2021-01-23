@@ -5,7 +5,6 @@
              prism:ViewModelLocator.AutowireViewModel="True" NavigationPage.HasNavigationBar="True"
              x:Class="XfMobileTemplate.Presn.Features.Petrol.PetrolPriceSearch.PetrolPriceSearchPage" >
 
-
     <ContentPage.Resources>
         <Style TargetType="StackLayout">
             <Setter Property="VisualStateManager.VisualStateGroups">
@@ -112,7 +111,6 @@
                             <BoxView Grid.Row="3"  HeightRequest="1" Margin="0"
                                VerticalOptions="End" BackgroundColor="Black" />
                         </StackLayout>
-                        
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
