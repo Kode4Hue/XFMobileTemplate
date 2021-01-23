@@ -6,5 +6,8 @@
     <Application.Resources>
         <!-- Strings -->
         <x:String x:Key="FalAngleRight">&#xf105;</x:String>
+        <x:String x:Key="FalCity">&#xf64f;</x:String>
+        <x:String x:Key="FalMapPin">&#xf276;</x:String>
+        <x:String x:Key="FalCalendarDay">&#xf783;</x:String>
     </Application.Resources>
 </prism:PrismApplication>
