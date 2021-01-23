@@ -12,9 +12,9 @@ A Xamarin Forms Mobile Solution Template based on the principles of Clean Archit
 
 ### Clean Architecture Layers:
 * Presentation:
-  * XfMobileTemplate.Ui
-  * XfMobileTemplate.Ui.Android
-  * XfMobileTemplate.Ui.iOS
+  * XfMobileTemplate.Presn
+  * XfMobileTemplate.Presn.Android
+  * XfMobileTemplate.Presn.iOS
 * Infrastructure:
   * XfMobileTemplate.CA.Infrastructure
 * Application:
