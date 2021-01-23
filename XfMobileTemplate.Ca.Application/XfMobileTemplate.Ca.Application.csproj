@@ -14,7 +14,6 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     <PackageReference Include="Prism.Core" Version="8.0.0.1909" />
-    <PackageReference Include="RestSharp" Version="106.11.7" />
   </ItemGroup>
 
 
