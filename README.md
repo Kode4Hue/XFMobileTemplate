@@ -51,6 +51,7 @@ A Xamarin Forms Mobile Solution Template based on the principles of Clean Archit
 * 2022: Transition to .NET MAUI (once its released ofcourse)
 
 ### Credits:
-* This template is highlighly influenced by [Jason Taylor](https://github.com/jasontaylordev)'s [SPA Clean Architecture Solution Template].
-* Credits to [Khary Sharpe(https://www.linkedin.com/in/kharysharpe/) for introducing me to the concept of Clean Architecture back in 2015.
+* This template is highlighly influenced by Jason Taylor's [SPA Clean Architecture Solution Template](https://github.com/jasontaylordev/CleanArchitecture)
+* Check out Damien Aicheh's [blog post](https://damienaicheh.github.io/xamarin/dotnet/templates/2018/06/12/xamarin-custom-template-en.html) on how to create your own Xamarin project template.
+* Credits to [Khary Sharpe](https://www.linkedin.com/in/kharysharpe/) for introducing me to the concept of Clean Architecture back in 2015.
 * Credits to the great [Uncle Bob](http://cleancoder.com/) for So providing amazing Enducational content on the concept of Clean Architecture. It has helped so many developers like myself understand how to write quality and maintainable code.
