@@ -18,7 +18,7 @@ A Xamarin Forms Mobile Solution Template based on the principles of Clean Archit
 ### Installing this template:
 * Clone this project and navigate to the directory containing this project
 * Navigate to the directory containing this project via our command line or terminal (Windwows/Mac)
-* Then execute `dotnet new --instal XfMobileTemplate` to install this template amongst our list of available templates.
+* Then execute `dotnet new --install XfMobileTemplate` to install this template amongst our list of available templates.
 * Finally, confirm that the template was installed correctly by executing `dotnet new --list` to view a list of all templates installed. You should see a project with 'Xamarin Forms Clean Architecture Template' with a shortname of 'XfMobileTemplate'.
 
 ### Starting a New Project from this Template:
