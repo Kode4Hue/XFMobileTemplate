@@ -1,13 +1,13 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Hubert Graham",
-    "classifications": [ "Xamarin" ],
+    "classifications": [ "iOS", "Android", "Mobile", "Template", "Clean Architecture"],
     "identity": "XfMobileTemplate",
     "shortName": "XfMobileTemplate",
-    "name": "Starter Xamarim Forms Mobile project with Clean Architecture principles",
+    "name": "Starter Mobile Template",
     "tags": {
 	    "language": "C#",
-	    "type": "project"
+	    "type": "solution"
 	  },
     "sourceName": "XfMobileTemplate",
     "preferNameDirectory": true
