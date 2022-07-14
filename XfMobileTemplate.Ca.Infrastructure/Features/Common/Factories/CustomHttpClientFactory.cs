@@ -32,7 +32,7 @@ namespace XfMobileTemplate.Ca.Infrastructure.Features.Common.Factories
         {
             HttpClient client;
 
-            if (AppSettings.CurrentEnvironment.Equals(AppEnvironment.Development) && AppSettings.EnableHttpProxy)
+            if (AppSettings.Environment.Equals(AppEnvironment.Development) && AppSettings.EnableHttpProxy)
             {
                 client = GenerateWebProxyClient();
             }
